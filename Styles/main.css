@@ -20,6 +20,20 @@ body {
     position: fixed;
 }
 
+.lines {
+  width: 40px; /* Line width */
+  height: 4px; /* Line thickness */
+  background-color: black; /* Line color */
+  margin: 3px 0; /* Space between lines */
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  display: none;
+}
 .nav img {
     width: 100px;
     height: 100px;
@@ -375,7 +389,6 @@ h5 {
   background-color: navy;
   color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
 }
 
 #close-btn {
@@ -404,7 +417,7 @@ h5 {
 }
 
 #btn:hover{
-  background-color: gray;
+  background-color: darkgray;
 }
 
 #btn:hover a{
@@ -443,154 +456,43 @@ h5 {
   margin-right: 10px;
 }
 
-/* General Styles for Mobile */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #f4f4f4;
-}
-
-/* Mobile Navigation Menu */
-.nav {
-    width: 100%;
-    background: #222;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-.menu-icon {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #222;
-    text-align: center;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 18px;
-    display: block;
-}
-
-.nav-links a:hover {
-    background: #ff9800;
-}
-
-.show-menu {
-    display: flex;
-}
-
-/* Content Layout */
-.content {
-    margin-top: 70px;
-    width: 100%;
-    padding: 10px;
-}
-
-/* Sections */
-section {
-    padding: 40px 10px;
-    text-align: center;
-    background: white;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Typing Effect */
-#typing {
-    display: inline-block;
-    border-right: 3px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(25, end) infinite alternate, blink 0.7s infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 200px; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Skills Section */
-.skills-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.skill-item {
-    background: #007396;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 5px;
-    font-size: 14px;
-}
-
-/* Projects Section */
-.project-card {
-    width: 90%;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 15px;
-    background: white;
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Footer */
-.footer {
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background: #222;
-    color: white;
-    position: fixed;
-    bottom: 0;
-}
-
-/* Responsive Menu Toggle */
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .nav-links {
-        display: none;
+        width: 100%;
+        height: auto;
+        position: relative;
         flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 0;
     }
-    .menu-icon {
-        display: block;
+    
+    .nav a {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .nav img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #home h1 {
+        font-size: 36px;
+        margin-top: 200px;
+    }
+
+    .skills-section, .experience-container, .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-card, .education-details {
+        width: 90%;
     }
 }
