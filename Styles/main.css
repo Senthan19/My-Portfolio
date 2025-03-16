@@ -443,79 +443,154 @@ h5 {
   margin-right: 10px;
 }
 
-@media (max-width: 768px) {
-   body {
-      font-size: 14px;
-    }
+/* General Styles for Mobile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4;
+}
+
+/* Mobile Navigation Menu */
+.nav {
+    width: 100%;
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #222;
+    text-align: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background: #ff9800;
+}
+
+.show-menu {
+    display: flex;
+}
+
+/* Content Layout */
+.content {
+    margin-top: 70px;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Sections */
+section {
+    padding: 40px 10px;
+    text-align: center;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Typing Effect */
+#typing {
+    display: inline-block;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(25, end) infinite alternate, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 200px; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Skills Section */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-item {
+    background: #007396;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+/* Projects Section */
+.project-card {
+    width: 90%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    background: white;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Responsive Menu Toggle */
+@media (max-width: 768px) {
     .nav {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px 0;
-        background: #222;
-        z-index: 1000;
+        flex-direction: row;
+        justify-content: space-between;
     }
-
-
-    .nav img {
-        width: 50px;
-        height: 50px;
-        margin: 0;
-        float: left;
-    }
-    .nav a {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-@media (max-width: 768px) {
-    #home {
-        display: flex;
+    .nav-links {
+        display: none;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100vh;
-        padding: 20px;
     }
-
-    #home h1 {
-        font-size: 30px;
-        margin-top: 0;
-    }
-
-    #home p {
-        font-size: 18px;
-        padding: 10px;
-    }
-}
-@media (max-width: 768px) {
-    .skills-section, .experience-container, .project-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Force a single-column layout */
-        gap: 20px;
-    }
-
-    .project-card, .education-details {
-        width: 90%; /* Make sure cards are not too wide */
-    }
-}
-
-@media (max-width: 768px) {
-    .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 15px;
-    }
-
-    #home h1 {
-        font-size: 32px;
-    }
-
-    #home p {
-        font-size: 18px;
+    .menu-icon {
+        display: block;
     }
 }
