@@ -20,20 +20,6 @@ body {
     position: fixed;
 }
 
-.lines {
-  width: 40px; /* Line width */
-  height: 4px; /* Line thickness */
-  background-color: black; /* Line color */
-  margin: 3px 0; /* Space between lines */
-}
-
-.mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  display: none;
-}
 .nav img {
     width: 100px;
     height: 100px;
@@ -389,6 +375,7 @@ h5 {
   background-color: navy;
   color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
 }
 
 #close-btn {
@@ -417,7 +404,7 @@ h5 {
 }
 
 #btn:hover{
-  background-color: darkgray;
+  background-color: gray;
 }
 
 #btn:hover a{
@@ -454,45 +441,4 @@ h5 {
   height: 50px;
   border-radius: 5px;
   margin-right: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 10px 0;
-    }
-    
-    .nav a {
-        font-size: 18px;
-        margin: 10px;
-    }
-
-    .nav img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 0;
-    }
-
-    .content {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    #home h1 {
-        font-size: 36px;
-        margin-top: 200px;
-    }
-
-    .skills-section, .experience-container, .project-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .project-card, .education-details {
-        width: 90%;
-    }
 }
